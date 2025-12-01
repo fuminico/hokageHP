@@ -1,15 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work | NPOほかげ</title>
-  <link rel="stylesheet" href="/styles/main.css">
-  <meta http-equiv="refresh" content="0;url=/work/homepage.html">
+  <title>NPO法人ほかげ</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <p>Redirecting to <a href="/work/homepage.html">homepage service page</a>...</p>
+  <header class="site-header">
+    <div class="container">
+      <a href="./" class="logo">NPOほかげ</a>
+      <nav>
+        <ul>
+          <li><a href="./" class="active">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./work/">Work</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>NPO法人ほかげ</h1>
+        <p class="subtitle">あなたのビジネスを支える、信頼のパートナー</p>
+        <a href="./work/" class="cta-button">サービス一覧を見る</a>
+      </div>
+    </section>
+
+    <section class="services-overview">
+      <div class="container">
+        <h2>提供サービス</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>ホームページ作成</h3>
+            <p>あなたのビジネスを輝かせる、オーダーメイドのWebサイトを制作します。</p>
+            <a href="./work/homepage.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>ロゴ作成</h3>
+            <p>ブランドの個性を引き出す、印象的なロゴデザインを提供します。</p>
+            <a href="./work/logo.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>制作物デザイン</h3>
+            <p>チラシ、パンフレット、名刺など、あらゆる印刷物をデザインします。</p>
+            <a href="./work/design.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>Web広告運用</h3>
+            <p>効果的なWeb広告で、あなたのビジネスの認知度を高めます。</p>
+            <a href="./work/webad.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>システム開発</h3>
+            <p>業務効率化を実現する、カスタムシステムを開発します。</p>
+            <a href="./work/system.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>ITコンサルティング</h3>
+            <p>IT戦略の立案から実行まで、総合的にサポートします。</p>
+            <a href="./work/consulting.html">詳しく見る</a>
+          </div>
+          <div class="service-card">
+            <h3>サポート業務</h3>
+            <p>Webサイトやシステムの運用・保守をトータルサポートします。</p>
+            <a href="./work/support.html">詳しく見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 NPO法人ほかげ. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-header {
+      background: #8B5E3C;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      font-family: 'Shippori Mincho', serif;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      opacity: 0.8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #8B5E3C 0%, #A67C52 100%);
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-family: 'Shippori Mincho', serif;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #8B5E3C;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .services-overview {
+      padding: 4rem 0;
+    }
+
+    .services-overview h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #8B5E3C;
+      font-family: 'Shippori Mincho', serif;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .service-card h3 {
+      color: #8B5E3C;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .service-card p {
+      margin-bottom: 1rem;
+      color: #666;
+    }
+
+    .service-card a {
+      color: #8B5E3C;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .service-card a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      background: #333;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+  </style>
 </body>
 </html>
-  
