@@ -1,10 +1,16 @@
 node_modules/
 .env
+website/dist/
+output/
+generated-images/
+
+# 画像ファイルは原則除外だが、docs以下とwebsite/public以下は許可
 *.png
 *.jpg
 *.jpeg
 !docs/**/*.png
 !docs/**/*.jpg
 !docs/**/*.jpeg
-output/
-generated-images/
+!website/public/**/*.png
+!website/public/**/*.jpg
+!website/public/**/*.jpeg

@@ -10,7 +10,7 @@ const PROJECT_ROOT = path.join(__dirname, '..');
 const CONTENT_DIR = path.join(PROJECT_ROOT, 'website', 'content', 'services');
 const PAGES_DIR = path.join(PROJECT_ROOT, 'website', 'content', 'pages');
 const TEMPLATE_DIR = path.join(PROJECT_ROOT, 'website', 'src');
-const OUTPUT_DIR = path.join(PROJECT_ROOT, 'website', 'dist');
+const OUTPUT_DIR = path.join(PROJECT_ROOT, 'docs');
 const PUBLIC_DIR = path.join(PROJECT_ROOT, 'website', 'public');
 
 // HTMLテンプレート

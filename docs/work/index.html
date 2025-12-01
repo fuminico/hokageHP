@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サービス一覧 | NPOほかげ</title>
-  <link rel="stylesheet" href="../styles/main.css">
+  <title>Work | NPOほかげ</title>
+  <link rel="stylesheet" href="/styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
@@ -12,13 +13,13 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="../" class="logo">NPOほかげ</a>
+      <a href="/" class="logo">NPOほかげ</a>
       <nav>
         <ul>
-          <li><a href="../">Home</a></li>
-          <li><a href="../about.html">About</a></li>
-          <li><a href="./" class="active">Work</a></li>
-          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html" class="">About</a></li>
+          <li><a href="/work" class="active">Work</a></li>
+          <li><a href="/contact" class="">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -26,141 +27,72 @@
 
   <main>
     <article class="service-detail">
-      <div class="hero-image">
-        <img src="../images/work.jpg" alt="サービス一覧" class="hero-bg" onError="this.style.display='none';this.parentElement.style.backgroundColor='#8B5E3C'">
+      <div class="hero-image" style="height: 200px; background-color: var(--color-primary);">
+        <img src="/images/services/work-index.jpg" alt="Work" class="hero-bg" style="display:none" onError="this.style.display='none';this.parentElement.style.backgroundColor='#8B5E3C'">
         <div class="container">
-          <h1>サービス一覧</h1>
+          <h1>Work</h1>
         </div>
       </div>
+      
+      <div class="container content-wrapper no-sidebar">
+        <div class="content-body">
+          
+<div class="work-intro">
+  <h2>「誰かがやってくれたらいいのに...」に、<br>私たちがお応えします。</h2>
+  <p>みなさんの業務や活動における「手が足りない」「手間がかかる」「得意じゃない」をサポートします。</p>
+  <p>NPOほかげは、平取町への移住者が持つ多様なスキルや経験を活かし、地域の皆さまの「困った」を解決する「しごとBANK」事業から始まりました。</p>
+  <p>現在ではウェブ制作やシステム開発を主軸に、専門的な知識と技術で皆さまの事業を力強く後押しします。</p>
+</div>
 
-      <div class="container service-body">
-        <p class="intro-text">NPO法人ほかげが提供する各種サービスをご紹介します。お客様のニーズに合わせた最適なソリューションを提供いたします。</p>
-
-        <section class="services-list">
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./homepage.html">ホームページ制作・運用</a></h2>
-              <p>あなたのビジネスを輝かせる、オーダーメイドのWebサイトを制作します。レスポンシブデザイン、SEO対策、CMS導入まで、トータルでサポートいたします。</p>
-              <a href="./homepage.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./design.html">デザイン・印刷物制作</a></h2>
-              <p>チラシ、パンフレット、名刺など、あらゆる印刷物をデザインします。ターゲットに響く、効果的なビジュアルコミュニケーションを実現します。</p>
-              <a href="./design.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./logo.html">ロゴ・キャラクターデザイン</a></h2>
-              <p>ブランドの個性を引き出す、印象的なロゴデザインを提供します。シンプルで覚えやすく、あらゆる媒体で映えるロゴを制作いたします。</p>
-              <a href="./logo.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./webad.html">Web広告運用サポート</a></h2>
-              <p>効果的なWeb広告で、あなたのビジネスの認知度を高めます。Google広告、SNS広告など、最適な媒体で成果を最大化します。</p>
-              <a href="./webad.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./system.html">業務システム構築・ツール開発</a></h2>
-              <p>業務効率化を実現する、カスタムシステムを開発します。在庫管理、顧客管理、予約システムなど、ニーズに合わせたソリューションを提供します。</p>
-              <a href="./system.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./support.html">パソコン・ITサポート</a></h2>
-              <p>Webサイトやシステムの運用・保守をトータルサポートします。定期メンテナンス、障害対応、コンテンツ更新など、安心の運用体制を提供します。</p>
-              <a href="./support.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <div class="service-content">
-              <h2><a href="./consulting.html">業務改善コンサルティング</a></h2>
-              <p>IT戦略の立案から実行まで、総合的にサポートします。デジタル化推進、システム選定、業務改善など、幅広いご相談に対応いたします。</p>
-              <a href="./consulting.html" class="read-more">詳しく見る →</a>
-            </div>
-          </div>
-        </section>
+<div class="service-grid">
+  <a href="/work/homepage.html" class="service-card">
+    <img src="/images/services/homepage.jpg" alt="ホームページ制作">
+    <h3>ホームページ制作</h3>
+    <p>新規作成からリニューアル、日々の更新までサポートします。</p>
+  </a>
+  <a href="/work/design.html" class="service-card">
+    <img src="/images/services/design.jpg" alt="デザイン制作">
+    <h3>デザイン制作</h3>
+    <p>チラシ、名刺、パンフレットなど、想いをカタチにします。</p>
+  </a>
+  <a href="/work/logo.html" class="service-card">
+    <img src="/images/services/logo.jpg" alt="ロゴ・キャラクター">
+    <h3>ロゴ・キャラクター</h3>
+    <p>ブランドの顔となるロゴや親しみやすいキャラクターを制作。</p>
+  </a>
+  <a href="/work/webad.html" class="service-card">
+    <img src="/images/services/webad.jpg" alt="Web広告運用">
+    <h3>Web広告運用</h3>
+    <p>効果的なWeb広告で、ターゲットに情報を届けます。</p>
+  </a>
+  <a href="/work/system.html" class="service-card">
+    <img src="/images/services/system.jpg" alt="システム開発">
+    <h3>システム開発</h3>
+    <p>業務効率化のためのシステムやツールを開発します。</p>
+  </a>
+  <a href="/work/support.html" class="service-card">
+    <img src="/images/services/support.jpg" alt="ITサポート">
+    <h3>ITサポート</h3>
+    <p>パソコンやソフトの操作など、ITに関するお困りごとを解決。</p>
+  </a>
+  <a href="/work/consulting.html" class="service-card">
+    <img src="/images/services/consulting.jpg" alt="業務改善コンサル">
+    <h3>業務改善コンサル</h3>
+    <p>業務フローの見直しやデジタル化で、効率アップを支援。</p>
+  </a>
+</div>
+  
+        </div>
+        
+        
       </div>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2024 NPO法人ほかげ. All rights reserved.</p>
+      <p>&copy; 2024 NPO Hokage. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <style>
-    .intro-text {
-      font-size: 1.2rem;
-      color: #666;
-      text-align: center;
-      margin: 3rem 0;
-      line-height: 1.8;
-    }
-
-    .services-list {
-      margin-top: 2rem;
-    }
-
-    .service-item {
-      margin-bottom: 3rem;
-      padding: 2rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .service-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .service-content h2 {
-      color: #8B5E3C;
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-
-    .service-content h2 a {
-      color: #8B5E3C;
-      text-decoration: none;
-    }
-
-    .service-content h2 a:hover {
-      text-decoration: underline;
-    }
-
-    .service-content p {
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-
-    .read-more {
-      color: #8B5E3C;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-
-    .read-more:hover {
-      text-decoration: underline;
-    }
-  </style>
 </body>
 </html>
