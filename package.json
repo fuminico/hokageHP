@@ -1,0 +1,28 @@
+{
+  "name": "gemini-image-generator",
+  "version": "1.0.0",
+  "description": "Gemini API経由で画像生成を行うツール",
+  "type": "module",
+  "main": "generate-image.js",
+  "scripts": {
+    "generate": "node generate-image.js",
+    "test": "node test-api.js",
+    "build:content": "node scripts/generate-content.js",
+    "build:images": "node scripts/generate-service-images.js",
+    "build:site": "node scripts/build-site.js",
+    "build": "npm run build:content && npm run build:images && npm run build:site",
+    "serve": "npx http-server website/dist -p 3333"
+  },
+  "keywords": [
+    "gemini",
+    "ai",
+    "image-generation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "marked": "^17.0.1",
+    "node-fetch": "^3.3.2"
+  }
+}
