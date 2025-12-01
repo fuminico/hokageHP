@@ -433,6 +433,70 @@ img {
   padding: 20px 70px;
   font-size: 1.2rem;
 }
+
+/* Work Index Page */
+.work-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.work-intro h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.work-intro p {
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+  color: var(--color-text);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  opacity: 1;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  padding: 20px 20px 10px;
+  margin: 0;
+}
+
+.service-card p {
+  padding: 0 20px 20px;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
 `;
 
 async function buildSite() {
@@ -529,26 +593,82 @@ async function buildSite() {
     console.log('固定ページディレクトリが見つからないか、エラーが発生しました:', err.message);
   }
 
-  // Workトップページ（一覧）の生成（簡易版）
-  const indexHtml = `
+  // Workトップページ（一覧）の生成
+  const workIndexContent = `
+<div class="work-intro">
+  <h2>「誰かがやってくれたらいいのに...」に、<br>私たちがお応えします。</h2>
+  <p>みなさんの業務や活動における「手が足りない」「手間がかかる」「得意じゃない」をサポートします。</p>
+  <p>NPOほかげは、平取町への移住者が持つ多様なスキルや経験を活かし、地域の皆さまの「困った」を解決する「しごとBANK」事業から始まりました。</p>
+  <p>現在ではウェブ制作やシステム開発を主軸に、専門的な知識と技術で皆さまの事業を力強く後押しします。</p>
+</div>
+
+<div class="service-grid">
+  <a href="/work/homepage.html" class="service-card">
+    <img src="/images/services/homepage.jpg" alt="ホームページ制作">
+    <h3>ホームページ制作</h3>
+    <p>新規作成からリニューアル、日々の更新までサポートします。</p>
+  </a>
+  <a href="/work/design.html" class="service-card">
+    <img src="/images/services/design.jpg" alt="デザイン制作">
+    <h3>デザイン制作</h3>
+    <p>チラシ、名刺、パンフレットなど、想いをカタチにします。</p>
+  </a>
+  <a href="/work/logo.html" class="service-card">
+    <img src="/images/services/logo.jpg" alt="ロゴ・キャラクター">
+    <h3>ロゴ・キャラクター</h3>
+    <p>ブランドの顔となるロゴや親しみやすいキャラクターを制作。</p>
+  </a>
+  <a href="/work/webad.html" class="service-card">
+    <img src="/images/services/webad.jpg" alt="Web広告運用">
+    <h3>Web広告運用</h3>
+    <p>効果的なWeb広告で、ターゲットに情報を届けます。</p>
+  </a>
+  <a href="/work/system.html" class="service-card">
+    <img src="/images/services/system.jpg" alt="システム開発">
+    <h3>システム開発</h3>
+    <p>業務効率化のためのシステムやツールを開発します。</p>
+  </a>
+  <a href="/work/support.html" class="service-card">
+    <img src="/images/services/support.jpg" alt="ITサポート">
+    <h3>ITサポート</h3>
+    <p>パソコンやソフトの操作など、ITに関するお困りごとを解決。</p>
+  </a>
+  <a href="/work/consulting.html" class="service-card">
+    <img src="/images/services/consulting.jpg" alt="業務改善コンサル">
+    <h3>業務改善コンサル</h3>
+    <p>業務フローの見直しやデジタル化で、効率アップを支援。</p>
+  </a>
+</div>
+  `;
+
+  // テンプレートを使用してHTMLを生成
+  // タイトル: Work, コンテンツ: workIndexContent, slug: work-index (画像用ダミー), activeNav: work, showSidebar: false
+  const workIndexHtml = htmlTemplate('Work', workIndexContent, 'work-index', 'work', false).replace(
+    'class="hero-bg"',
+    'class="hero-bg" style="display:none"' // ヒーロー画像は非表示にするか、別途用意する
+  ).replace(
+    '<div class="hero-image">',
+    '<div class="hero-image" style="height: 200px; background-color: var(--color-primary);">' // 高さを調整
+  );
+
+  await fs.writeFile(path.join(OUTPUT_DIR, 'work', 'index.html'), workIndexHtml);
+
+  // ルートのindex.htmlはWorkトップへリダイレクト（またはトップページとして同じ内容を表示）
+  const rootIndexHtml = `
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Work | NPOほかげ</title>
-  <link rel="stylesheet" href="/styles/main.css">
-  <meta http-equiv="refresh" content="0;url=/work/homepage.html">
+  <title>NPOほかげ</title>
+  <meta http-equiv="refresh" content="0;url=/work/">
 </head>
 <body>
-  <p>Redirecting to <a href="/work/homepage.html">homepage service page</a>...</p>
+  <p>Redirecting to <a href="/work/">Work page</a>...</p>
 </body>
 </html>
   `;
-  await fs.writeFile(path.join(OUTPUT_DIR, 'work', 'index.html'), indexHtml);
-
-  // ルートのindex.htmlも生成（リダイレクト）
-  await fs.writeFile(path.join(OUTPUT_DIR, 'index.html'), indexHtml);
+  await fs.writeFile(path.join(OUTPUT_DIR, 'index.html'), rootIndexHtml);
 
   console.log('\n=== 構築完了 ===');
   console.log(`出力先: ${OUTPUT_DIR}`);

@@ -342,3 +342,67 @@ img {
   padding: 20px 70px;
   font-size: 1.2rem;
 }
+
+/* Work Index Page */
+.work-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.work-intro h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.work-intro p {
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: block;
+  color: var(--color-text);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  opacity: 1;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  padding: 20px 20px 10px;
+  margin: 0;
+}
+
+.service-card p {
+  padding: 0 20px 20px;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
