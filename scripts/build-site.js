@@ -13,6 +13,9 @@ const TEMPLATE_DIR = path.join(PROJECT_ROOT, 'website', 'src');
 const OUTPUT_DIR = path.join(PROJECT_ROOT, 'docs');
 const PUBLIC_DIR = path.join(PROJECT_ROOT, 'website', 'public');
 
+// GitHub Pages用のベースパス
+const BASE_PATH = '/hokageHP';
+
 // HTMLテンプレート
 const htmlTemplate = (title, content, slug, activeNav = 'work', showSidebar = true) => `
 <!DOCTYPE html>
@@ -21,7 +24,7 @@ const htmlTemplate = (title, content, slug, activeNav = 'work', showSidebar = tr
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title} | NPOほかげ</title>
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="${BASE_PATH}/styles/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
@@ -29,13 +32,13 @@ const htmlTemplate = (title, content, slug, activeNav = 'work', showSidebar = tr
 <body>
   <header class="site-header">
     <div class="container">
-      <a href="/" class="logo">NPOほかげ</a>
+      <a href="${BASE_PATH}/" class="logo">NPOほかげ</a>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html" class="${activeNav === 'about' ? 'active' : ''}">About</a></li>
-          <li><a href="/work" class="${activeNav === 'work' ? 'active' : ''}">Work</a></li>
-          <li><a href="/contact" class="${activeNav === 'contact' ? 'active' : ''}">Contact</a></li>
+          <li><a href="${BASE_PATH}/">Home</a></li>
+          <li><a href="${BASE_PATH}/about.html" class="${activeNav === 'about' ? 'active' : ''}">About</a></li>
+          <li><a href="${BASE_PATH}/work" class="${activeNav === 'work' ? 'active' : ''}">Work</a></li>
+          <li><a href="${BASE_PATH}/contact" class="${activeNav === 'contact' ? 'active' : ''}">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -44,7 +47,7 @@ const htmlTemplate = (title, content, slug, activeNav = 'work', showSidebar = tr
   <main>
     <article class="service-detail">
       <div class="hero-image">
-        <img src="/images/${activeNav === 'work' ? 'services/' + slug : slug}.jpg" alt="${title}" class="hero-bg" onError="this.style.display='none';this.parentElement.style.backgroundColor='#8B5E3C'">
+        <img src="${BASE_PATH}/images/${activeNav === 'work' ? 'services/' + slug : slug}.jpg" alt="${title}" class="hero-bg" onError="this.style.display='none';this.parentElement.style.backgroundColor='#8B5E3C'">
         <div class="container">
           <h1>${title}</h1>
         </div>
@@ -59,19 +62,19 @@ const htmlTemplate = (title, content, slug, activeNav = 'work', showSidebar = tr
           <div class="contact-box">
             <h3>お問い合わせ</h3>
             <p>このサービスに関するご相談・お見積もりはこちらから</p>
-            <a href="/contact" class="btn btn-primary">お問い合わせフォーム</a>
+            <a href="${BASE_PATH}/contact" class="btn btn-primary">お問い合わせフォーム</a>
           </div>
           
           <div class="service-list">
             <h3>その他の事業</h3>
             <ul>
-              <li><a href="/work/homepage.html">ホームページ制作</a></li>
-              <li><a href="/work/design.html">デザイン制作</a></li>
-              <li><a href="/work/logo.html">ロゴ・キャラクター</a></li>
-              <li><a href="/work/webad.html">Web広告運用</a></li>
-              <li><a href="/work/system.html">システム開発</a></li>
-              <li><a href="/work/support.html">ITサポート</a></li>
-              <li><a href="/work/consulting.html">業務改善コンサル</a></li>
+              <li><a href="${BASE_PATH}/work/homepage.html">ホームページ制作</a></li>
+              <li><a href="${BASE_PATH}/work/design.html">デザイン制作</a></li>
+              <li><a href="${BASE_PATH}/work/logo.html">ロゴ・キャラクター</a></li>
+              <li><a href="${BASE_PATH}/work/webad.html">Web広告運用</a></li>
+              <li><a href="${BASE_PATH}/work/system.html">システム開発</a></li>
+              <li><a href="${BASE_PATH}/work/support.html">ITサポート</a></li>
+              <li><a href="${BASE_PATH}/work/consulting.html">業務改善コンサル</a></li>
             </ul>
           </div>
         </aside>` : ''}
@@ -603,38 +606,38 @@ async function buildSite() {
 </div>
 
 <div class="service-grid">
-  <a href="/work/homepage.html" class="service-card">
-    <img src="/images/services/homepage.jpg" alt="ホームページ制作">
+  <a href="${BASE_PATH}/work/homepage.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/homepage.jpg" alt="ホームページ制作">
     <h3>ホームページ制作</h3>
     <p>新規作成からリニューアル、日々の更新までサポートします。</p>
   </a>
-  <a href="/work/design.html" class="service-card">
-    <img src="/images/services/design.jpg" alt="デザイン制作">
+  <a href="${BASE_PATH}/work/design.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/design.jpg" alt="デザイン制作">
     <h3>デザイン制作</h3>
     <p>チラシ、名刺、パンフレットなど、想いをカタチにします。</p>
   </a>
-  <a href="/work/logo.html" class="service-card">
-    <img src="/images/services/logo.jpg" alt="ロゴ・キャラクター">
+  <a href="${BASE_PATH}/work/logo.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/logo.jpg" alt="ロゴ・キャラクター">
     <h3>ロゴ・キャラクター</h3>
     <p>ブランドの顔となるロゴや親しみやすいキャラクターを制作。</p>
   </a>
-  <a href="/work/webad.html" class="service-card">
-    <img src="/images/services/webad.jpg" alt="Web広告運用">
+  <a href="${BASE_PATH}/work/webad.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/webad.jpg" alt="Web広告運用">
     <h3>Web広告運用</h3>
     <p>効果的なWeb広告で、ターゲットに情報を届けます。</p>
   </a>
-  <a href="/work/system.html" class="service-card">
-    <img src="/images/services/system.jpg" alt="システム開発">
+  <a href="${BASE_PATH}/work/system.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/system.jpg" alt="システム開発">
     <h3>システム開発</h3>
     <p>業務効率化のためのシステムやツールを開発します。</p>
   </a>
-  <a href="/work/support.html" class="service-card">
-    <img src="/images/services/support.jpg" alt="ITサポート">
+  <a href="${BASE_PATH}/work/support.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/support.jpg" alt="ITサポート">
     <h3>ITサポート</h3>
     <p>パソコンやソフトの操作など、ITに関するお困りごとを解決。</p>
   </a>
-  <a href="/work/consulting.html" class="service-card">
-    <img src="/images/services/consulting.jpg" alt="業務改善コンサル">
+  <a href="${BASE_PATH}/work/consulting.html" class="service-card">
+    <img src="${BASE_PATH}/images/services/consulting.jpg" alt="業務改善コンサル">
     <h3>業務改善コンサル</h3>
     <p>業務フローの見直しやデジタル化で、効率アップを支援。</p>
   </a>
@@ -642,8 +645,8 @@ async function buildSite() {
   `;
 
   // テンプレートを使用してHTMLを生成
-  // タイトル: Work, コンテンツ: workIndexContent, slug: work-index (画像用ダミー), activeNav: work, showSidebar: false
-  const workIndexHtml = htmlTemplate('Work', workIndexContent, 'work-index', 'work', false).replace(
+  // タイトル: サービス一覧, コンテンツ: workIndexContent, slug: work-index (画像用ダミー), activeNav: work, showSidebar: false
+  const workIndexHtml = htmlTemplate('サービス一覧', workIndexContent, 'work-index', 'work', false).replace(
     'class="hero-bg"',
     'class="hero-bg" style="display:none"' // ヒーロー画像は非表示にするか、別途用意する
   ).replace(
@@ -661,10 +664,10 @@ async function buildSite() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NPOほかげ</title>
-  <meta http-equiv="refresh" content="0;url=/work/">
+  <meta http-equiv="refresh" content="0;url=${BASE_PATH}/work/">
 </head>
 <body>
-  <p>Redirecting to <a href="/work/">Work page</a>...</p>
+  <p>Redirecting to <a href="${BASE_PATH}/work/">Work page</a>...</p>
 </body>
 </html>
   `;
