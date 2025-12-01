@@ -645,14 +645,8 @@ async function buildSite() {
   `;
 
   // テンプレートを使用してHTMLを生成
-  // タイトル: サービス一覧, コンテンツ: workIndexContent, slug: work-index (画像用ダミー), activeNav: work, showSidebar: false
-  const workIndexHtml = htmlTemplate('サービス一覧', workIndexContent, 'work-index', 'work', false).replace(
-    'class="hero-bg"',
-    'class="hero-bg" style="display:none"' // ヒーロー画像は非表示にするか、別途用意する
-  ).replace(
-    '<div class="hero-image">',
-    '<div class="hero-image" style="height: 200px; background-color: var(--color-primary);">' // 高さを調整
-  );
+  // タイトル: サービス一覧, コンテンツ: workIndexContent, slug: work-index, activeNav: work, showSidebar: false
+  const workIndexHtml = htmlTemplate('サービス一覧', workIndexContent, 'work-index', 'work', false);
 
   await fs.writeFile(path.join(OUTPUT_DIR, 'work', 'index.html'), workIndexHtml);
 
