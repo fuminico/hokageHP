@@ -10,7 +10,7 @@ const PROJECT_ROOT = path.join(__dirname, '..');
 const CONTENT_DIR = path.join(PROJECT_ROOT, 'website', 'content', 'services');
 const PAGES_DIR = path.join(PROJECT_ROOT, 'website', 'content', 'pages');
 const TEMPLATE_DIR = path.join(PROJECT_ROOT, 'website', 'src');
-const OUTPUT_DIR = path.join(PROJECT_ROOT, 'docs');
+const OUTPUT_DIR = path.join(PROJECT_ROOT, 'website', 'dist', 'hokageHP');
 const PUBLIC_DIR = path.join(PROJECT_ROOT, 'website', 'public');
 
 // GitHub Pages用のベースパス
@@ -607,38 +607,38 @@ async function buildSite() {
 
 <div class="service-grid">
   <a href="${BASE_PATH}/work/homepage.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/homepage.jpg" alt="ホームページ制作">
-    <h3>ホームページ制作</h3>
+    <img src="${BASE_PATH}/images/services/homepage.jpg" alt="ホームページ制作・運用">
+    <h3>ホームページ制作・運用</h3>
     <p>新規作成からリニューアル、日々の更新までサポートします。</p>
   </a>
   <a href="${BASE_PATH}/work/design.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/design.jpg" alt="デザイン制作">
-    <h3>デザイン制作</h3>
+    <img src="${BASE_PATH}/images/services/design.jpg" alt="デザイン・印刷物制作">
+    <h3>デザイン・印刷物制作</h3>
     <p>チラシ、名刺、パンフレットなど、想いをカタチにします。</p>
   </a>
   <a href="${BASE_PATH}/work/logo.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/logo.jpg" alt="ロゴ・キャラクター">
-    <h3>ロゴ・キャラクター</h3>
+    <img src="${BASE_PATH}/images/services/logo.jpg" alt="ロゴ・キャラクターデザイン">
+    <h3>ロゴ・キャラクターデザイン</h3>
     <p>ブランドの顔となるロゴや親しみやすいキャラクターを制作。</p>
   </a>
   <a href="${BASE_PATH}/work/webad.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/webad.jpg" alt="Web広告運用">
-    <h3>Web広告運用</h3>
+    <img src="${BASE_PATH}/images/services/webad.jpg" alt="Web広告運用サポート">
+    <h3>Web広告運用サポート</h3>
     <p>効果的なWeb広告で、ターゲットに情報を届けます。</p>
   </a>
   <a href="${BASE_PATH}/work/system.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/system.jpg" alt="システム開発">
-    <h3>システム開発</h3>
+    <img src="${BASE_PATH}/images/services/system.jpg" alt="業務システム構築・ツール開発">
+    <h3>業務システム構築・ツール開発</h3>
     <p>業務効率化のためのシステムやツールを開発します。</p>
   </a>
   <a href="${BASE_PATH}/work/support.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/support.jpg" alt="ITサポート">
-    <h3>ITサポート</h3>
+    <img src="${BASE_PATH}/images/services/support.jpg" alt="パソコン・ITサポート">
+    <h3>パソコン・ITサポート</h3>
     <p>パソコンやソフトの操作など、ITに関するお困りごとを解決。</p>
   </a>
   <a href="${BASE_PATH}/work/consulting.html" class="service-card">
-    <img src="${BASE_PATH}/images/services/consulting.jpg" alt="業務改善コンサル">
-    <h3>業務改善コンサル</h3>
+    <img src="${BASE_PATH}/images/services/consulting.jpg" alt="業務改善コンサルティング">
+    <h3>業務改善コンサルティング</h3>
     <p>業務フローの見直しやデジタル化で、効率アップを支援。</p>
   </a>
 </div>
